@@ -174,4 +174,3 @@ diff --git a/panda_modified.xml b/panda_modified.xml
 -  <keyframe>
 -    <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853 0.04 0.04" ctrl="0 0 0 -1.57079 0 1.57079 -0.7853 255"/>
 -  </keyframe>
- </mujoco>
