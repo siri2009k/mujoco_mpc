@@ -557,7 +557,7 @@ void UpdateInfoText(mj::Simulate* sim,
     }
 
     // add islands if enabled
-    if (mjENABLED(mjENBL_ISLAND)) {
+    if (!mjDISABLED(mjDSBL_ISLAND)) {
       char tmp[20];
       mju::sprintf_arr(tmp, "\n%d", d->nisland);
       mju::strcat_arr(content, tmp);
