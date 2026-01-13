@@ -564,7 +564,7 @@ mjtNum Ground(const mjModel* model, const mjData* data, const mjtNum pos[3],
   const mjtByte default_geomgroup[6] = {1, 0, 0, 0, 0, 0};
   const mjtByte* query_geomgroup = geomgroup ? geomgroup : default_geomgroup;
   mjtNum dist = mj_ray(model, data, query, down, query_geomgroup, flg_static,
-                       bodyexclude, &geomid);
+                       bodyexclude, &geomid, nullptr);
 
   if (dist < 0) {  // SHOULD NOT OCCUR
     mju_error("no group 0 geom detected by raycast");
