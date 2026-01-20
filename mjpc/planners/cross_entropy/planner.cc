@@ -68,6 +68,9 @@ void CrossEntropyPlanner::Initialize(mjModel* model, const Task& task) {
   n_elite_ =
       GetNumberOrDefault(std::max(num_trajectory_ / 10, 2), model, "n_elite");
 
+  interpolation_ = GetNumberOrDefault(spline::SplineInterpolation::kCubicSpline,
+                                      model, "sampling_representation");
+
   if (num_trajectory_ > kMaxTrajectory) {
     mju_error_i("Too many trajectories, %d is the maximum allowed.",
                 kMaxTrajectory);
