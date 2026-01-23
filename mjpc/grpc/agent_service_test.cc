@@ -51,7 +51,10 @@ class AgentServiceTest : public ::testing::Test {
     stub = Agent::NewStub(channel);
   }
 
-  void TearDown() override { server->Shutdown(); }
+  void TearDown() override {
+    server->Shutdown();
+    mj_freeLastXML();
+  }
 
   void RunAndCheckInit(std::string_view task_id, mjModel* model) {
     agent::InitRequest init_request;
