@@ -577,6 +577,9 @@ void UpdateWatch(mj::Simulate* sim) {
   sim->ui0.sect[SECT_WATCH].item[2].multi.nelem = 1;
   mju::strcpy_arr(sim->ui0.sect[SECT_WATCH].item[2].multi.name[0], "invalid field");
 
+  // prepare symbols needed by xmacro
+  MJDATA_POINTERS_PREAMBLE(sim->m);
+
   // find specified field in mjData arrays, update value
   #define X(TYPE, NAME, NR, NC)                                                                  \
     if (!mju::strcmp_arr(#NAME, sim->field) &&                                                   \
