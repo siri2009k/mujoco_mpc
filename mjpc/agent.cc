@@ -634,7 +634,7 @@ void Agent::GUI(mjUI& ui) {
         // necessary casting when reading such values.
 
       } else {
-        mju_error_s("Selection list not found for %s", name);
+        mju_error("Selection list not found for %s", name);
         return;
       }
       shift += 1;

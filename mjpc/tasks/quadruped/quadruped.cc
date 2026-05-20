@@ -548,7 +548,7 @@ void QuadrupedFlat::ResetLocked(const mjModel* model) {
   int foot_index = 0;
   for (const char* footname : {"FL", "HL", "FR", "HR"}) {
     int foot_id = mj_name2id(model, mjOBJ_GEOM, footname);
-    if (foot_id < 0) mju_error_s("geom '%s' not found", footname);
+    if (foot_id < 0) mju_error("geom '%s' not found", footname);
     residual_.foot_geom_id_[foot_index] = foot_id;
     foot_index++;
   }
@@ -557,7 +557,7 @@ void QuadrupedFlat::ResetLocked(const mjModel* model) {
   int shoulder_index = 0;
   for (const char* shouldername : {"FL_hip", "HL_hip", "FR_hip", "HR_hip"}) {
     int foot_id = mj_name2id(model, mjOBJ_BODY, shouldername);
-    if (foot_id < 0) mju_error_s("body '%s' not found", shouldername);
+    if (foot_id < 0) mju_error("body '%s' not found", shouldername);
     residual_.shoulder_body_id_[shoulder_index] = foot_id;
     shoulder_index++;
   }

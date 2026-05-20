@@ -172,7 +172,7 @@ void Walk::ResidualFn::Residual(const mjModel* model, const mjData* data,
     }
   }
   if (user_sensor_dim != counter) {
-    mju_error_i(
+    mju_error(
         "mismatch between total user-sensor dimension "
         "and actual length of residual %d",
         counter);

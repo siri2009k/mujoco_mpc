@@ -63,8 +63,8 @@ void Walker::ResidualFn::Residual(const mjModel* model, const mjData* data,
     }
   }
   if (user_sensor_dim != counter) {
-    mju_error_i("mismatch between total user-sensor dimension "
-                "and actual length of residual %d", counter);
+    mju_error("mismatch between total user-sensor dimension "
+              "and actual length of residual %d", counter);
   }
 }
 }  // namespace mjpc

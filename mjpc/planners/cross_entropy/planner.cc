@@ -72,8 +72,8 @@ void CrossEntropyPlanner::Initialize(mjModel* model, const Task& task) {
                                       model, "sampling_representation");
 
   if (num_trajectory_ > kMaxTrajectory) {
-    mju_error_i("Too many trajectories, %d is the maximum allowed.",
-                kMaxTrajectory);
+    mju_error("Too many trajectories, %d is the maximum allowed.",
+              kMaxTrajectory);
   }
 }
 

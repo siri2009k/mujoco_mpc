@@ -197,7 +197,7 @@ double DefaultParameterValue(const mjModel* model, std::string_view name) {
   int id =
       mj_name2id(model, mjOBJ_NUMERIC, absl::StrCat("residual_", name).c_str());
   if (id == -1) {
-    mju_error_s("Parameter '%s' not found", std::string(name).c_str());
+    mju_error("Parameter '%s' not found", std::string(name).c_str());
     return 0;
   }
   return model->numeric_data[model->numeric_adr[id]];
@@ -209,7 +209,7 @@ int ParameterIndex(const mjModel* model, std::string_view name) {
       mj_name2id(model, mjOBJ_NUMERIC, absl::StrCat("residual_", name).c_str());
 
   if (id == -1) {
-    mju_error_s("Parameter '%s' not found", std::string(name).c_str());
+    mju_error("Parameter '%s' not found", std::string(name).c_str());
   }
 
   int i;

@@ -69,8 +69,8 @@ void SampleGradientPlanner::Initialize(mjModel* model, const Task& task) {
   gradient_filter_ = GetNumberOrDefault(1.0, model, "sample_gradient_filter");
 
   if (num_trajectory_ > kMaxTrajectory) {
-    mju_error_i("Too many trajectories, %d is the maximum allowed.",
-                kMaxTrajectory);
+    mju_error("Too many trajectories, %d is the maximum allowed.",
+              kMaxTrajectory);
   }
 }
 

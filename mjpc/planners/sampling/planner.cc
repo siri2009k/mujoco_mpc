@@ -68,8 +68,8 @@ void SamplingPlanner::Initialize(mjModel* model, const Task& task) {
   sliding_plan_ = GetNumberOrDefault(0, model, "sampling_sliding_plan");
 
   if (num_trajectory_ > kMaxTrajectory) {
-    mju_error_i("Too many trajectories, %d is the maximum allowed.",
-                kMaxTrajectory);
+    mju_error("Too many trajectories, %d is the maximum allowed.",
+              kMaxTrajectory);
   }
 
   winner = 0;
